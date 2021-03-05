@@ -2,38 +2,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search Project</title>
-
+    <title>NJ Devils Search Project</title>
     <link rel="stylesheet" href="../dist/css/styles.css" />
   </head>
   <body>
-    <grid-lock>
-      <form>
-        <label for="site-search">Search the site:</label>
-        <input
-          type="search"
-          id="search"
-          name="q"
-          aria-label="Search through site content"
-        />
-      </form>
-
-      <div class="filters">
-        <button class="filter button-outline" data-filter="platinum">
-          Platinum
-        </button>
-        <button class="filter button-outline" data-filter="gold">Gold</button>
-        <button class="filter button-outline" data-filter="all">ALL</button>
+    <hero-banner style="background-image: url(img/nj-devils.jpg)">
+      <div>
+        <div>
+          <p>Filter and Search tool for:</p>
+          <h1 class="maxium-large-san-serif">
+            <strong>New Jersey Devils</strong>
+          </h1>
+          <p>
+            Data courtesy
+            <a href="https://www.hockey-reference.com">Hockey-Reference.com</a>.
+          </p>
+        </div>
       </div>
+    </hero-banner>
+    <filter-nav>
+      <filter-navbar>
+        <filter-icon>
+          <span class="fas fa-filter" aria-hidden="true"></span>
+        </filter-icon>
+        <form>
+          <input
+            type="search"
+            id="search"
+            name="q"
+            aria-label="Search through site content"
+            placeholder="Search for a player..."
+          />
+        </form>
+        <search-icon>
+          <i className="fas fa-search" aria-hidden="true"></i>
+        </search-icon>
+        <filter-items>
+          <button data-filter="platinum">Most Goals</button>
+          <button data-filter="platinum">Highest Penalty Minutes</button>
+          <button data-filter="platinum">Item 3</button>
+          <button data-filter="platinum">Item 4</button>
+          <button data-filter="all">Clear All Filters</button>
+        </filter-items>
+      </filter-navbar>
+    </filter-nav>
 
-      <flex-columns
-        id="data"
-        class="filter-container"
-        data-columns="3"
-      ></flex-columns>
+    <grid-lock>
+      <flex-columns id="data" data-columns="3"></flex-columns>
     </grid-lock>
 
     <script src="js/data.js"></script>
     <script src="js/search.js"></script>
+    <script src="https://kit.fontawesome.com/8768cd9b81.js"></script>
   </body>
 </html>

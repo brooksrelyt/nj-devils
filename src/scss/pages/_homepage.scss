@@ -35,3 +35,51 @@
 .filters {
   margin-bottom: 1em;
 }
+
+hero-banner {
+  height: 25vh;
+  position: relative;
+
+  grid-lock {
+    width: 100%;
+    & > img {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  &:first-child {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-position: 50% 50% \9 !important;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+
+    & > div {
+      padding: 50px;
+      z-index: 1;
+      width: 100%;
+
+      @include breakpoint(--tablet-max) {
+        padding: 25px;
+      }
+
+      h1 span {
+        font-weight: bold;
+      }
+
+      h1,
+      p {
+        color: var(--white);
+        margin: 0;
+        text-transform: uppercase;
+        background-color: rgba(0, 0, 0, 0.75);
+        margin-bottom: 5px;
+        display: table;
+        padding: 5px 10px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

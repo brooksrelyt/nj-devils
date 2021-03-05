@@ -1,6 +1,6 @@
 // Google Sheets Fetch
 const url =
-  'https://sheets.googleapis.com/v4/spreadsheets/1zHyHlCNDpBlsry2vIbgcjqFsGnL6SFLGyG8xilJzSqs/values/Sheet1?key=AIzaSyBsFrkIg74CmNHH1jHUsLX0bvkPUh9m41A';
+  'https://sheets.googleapis.com/v4/spreadsheets/1LL89l_LEOz-LrY2LnrDq6PwZ8LbIidBAWDBMdFPtixE/values/Sheet1?key=AIzaSyBsFrkIg74CmNHH1jHUsLX0bvkPUh9m41A';
 const display = document.querySelector('#data');
 
 const loader = `<span class="loader med-spaces border-0 col-md-12"><div><div></div><div></div><div></div><div></div></div></span>`;
@@ -14,7 +14,7 @@ const handleResponse = function (data) {
 
     const getHeaders = data.values.splice(0, 1)[0];
 
-    let recognitionArray;
+    let devilsArray;
 
     const formattedData = data.values.map(function (arrValue) {
       const obj = {};
@@ -27,51 +27,38 @@ const handleResponse = function (data) {
 
     console.log(formattedData);
 
-    if (!Array.isArray(recognitionArray)) recognitionArray = formattedData;
+    if (!Array.isArray(devilsArray)) devilsArray = formattedData;
 
-    recognitionArray.forEach(function (obj, i) {
+    devilsArray.forEach(function (obj, i) {
       const [col, item] = [1, 2].map(function () {
         return document.createElement('div');
       });
 
       const description = document.createElement('p');
-      const name = document.createElement('h3');
-      const image = document.createElement('img');
-
-      // Image
-      image.src = obj.link_to_box_file_picture_of_them;
-      image.setAttribute('alt', 'Picture of ' + obj.name);
-      image.classList.add('img-fluid');
-      col.appendChild(image);
-
-      if (obj.link_to_box_file_picture_of_them == null) {
-        image.src = '../img/testudo.jpg';
-      }
+      const player = document.createElement('h3');
 
       // Title
-      name.innerHTML = obj.name;
-      item.appendChild(name);
+      player.innerHTML = obj.player;
+      item.appendChild(player);
 
-      // Description
-      description.innerHTML = obj.blurb;
-      item.appendChild(description);
+      // // Description
+      // description.innerHTML = obj.blurb;
+      // item.appendChild(description);
 
-      if (obj.blurb == null) {
-        description.innerHTML = 'Bio Coming Soon.';
-      }
+      // if (obj.blurb == null) {
+      //   description.innerHTML = 'Bio Coming Soon.';
+      // }
 
       // Layout
-      col.classList.add('filtr-item');
-      col.setAttribute('data-filter', obj.level.toLowerCase());
       col.appendChild(item);
       display.appendChild(col);
 
-      if (recognitionArray.length - 1 === i) {
+      if (devilsArray.length - 1 === i) {
         resolve();
       }
     });
 
-    if (recognitionArray === undefined || recognitionArray.length == 0) {
+    if (devilsArray === undefined || devilsArray.length == 0) {
       const container = document.createElement('div');
       const noResults = document.createElement('p');
 
