@@ -1,0 +1,45 @@
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* Call to Action Block */
+
+.button-block {
+  display: inline-block;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px 20px;
+  color: var(--white);
+  background-color: var(--red);
+  transition: background 0.5s;
+
+  &:hover,
+  &:focus {
+    background-color: var(--redDark);
+    color: var(--white);
+  }
+}
+
+.button-outline {
+  display: inline-block;
+  margin-top: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: 2px solid var(--red);
+  background-color: var(--white);
+  color: var(--red);
+  text-align: center;
+  transform: background 0.5s;
+
+  &:hover,
+  &:focus {
+    background-color: var(--red);
+    color: var(--white);
+  }
+}

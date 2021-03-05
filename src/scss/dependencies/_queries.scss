@@ -1,0 +1,67 @@
+@mixin breakpoint($point) {
+  @if $point == --small-min {
+    @media (min-width: 320px) {
+      @content;
+    }
+  }
+
+  @if $point == --small-max {
+    @media (max-width: 479px) {
+      @content;
+    }
+  }
+
+  @if $point == --medium-min {
+    @media (min-width: 480px) {
+      @content;
+    }
+  }
+
+  @if $point == --medium-max {
+    @media (max-width: 649px) {
+      @content;
+    }
+  }
+
+  @if $point == --large-min {
+    @media (min-width: 650px) {
+      @content;
+    }
+  }
+
+  @if $point == --large-max {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @if $point == --tablet-min {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $point == --tablet-max {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  }
+
+  @if $point == --desktop-min {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $point == --desktop-max {
+    @media (max-width: 1499px) {
+      @content;
+    }
+  }
+
+  @if $point == --x-large {
+    @media (min-width: 1500px) {
+      @content;
+    }
+  }
+}

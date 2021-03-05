@@ -1,0 +1,37 @@
+.hide {
+  /* You can play with the seconds to change the "animation" */
+  animation: hide 0.5s ease 0s 1 normal forwards;
+  transform-origin: center;
+}
+.show {
+  /* You can play with the seconds to change the "animation" */
+  animation: show 0.5s ease 0s 1 normal forwards;
+  transform-origin: center;
+}
+
+@keyframes hide {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    width: 0;
+    height: 0;
+    margin: 0;
+  }
+}
+@keyframes show {
+  0% {
+    transform: scale(0);
+    width: 0;
+    height: 0;
+    margin: 0;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.filters {
+  margin-bottom: 1em;
+}

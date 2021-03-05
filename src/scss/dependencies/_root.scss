@@ -1,0 +1,30 @@
+:root {
+  --sansSerif: Helvetica, Arial, Verdana, sans-serif;
+  --serif: Georgia, serif;
+  --roboto: Helvetica, Arial, sans-serif;
+
+  --red: #e21833;
+  --redDark: #951022;
+  --gold: #ffd200;
+  --white: #ffffff;
+  --offWhite: #f1f1f1;
+
+  --black: #000000;
+
+  --grayDark: #454545;
+  --gray: #7f7f7f;
+  --grayLight: #e6e6e6;
+
+  --yellow: #f8d351;
+  --yellowDark: #c1a43d;
+  --bronze: #ad7231;
+
+  --blue: #4070ff;
+  --mckeldin: #80e653;
+  --patina: #2de6c6;
+  --oriole: #e68320;
+
+  font-family: var(--sansSerif);
+  font-size: 16px;
+  line-height: 1.3em;
+}

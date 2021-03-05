@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Project</title>
+
+    <link rel="stylesheet" href="../dist/css/styles.css" />
+  </head>
+  <body>
+    <grid-lock>
+      <form>
+        <label for="site-search">Search the site:</label>
+        <input
+          type="search"
+          id="search"
+          name="q"
+          aria-label="Search through site content"
+        />
+      </form>
+
+      <div class="filters">
+        <button class="filter button-outline" data-filter="platinum">
+          Platinum
+        </button>
+        <button class="filter button-outline" data-filter="gold">Gold</button>
+        <button class="filter button-outline" data-filter="all">ALL</button>
+      </div>
+
+      <flex-columns
+        id="data"
+        class="filter-container"
+        data-columns="3"
+      ></flex-columns>
+    </grid-lock>
+
+    <script src="js/data.js"></script>
+    <script src="js/search.js"></script>
+  </body>
+</html>

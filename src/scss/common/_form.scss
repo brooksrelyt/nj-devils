@@ -1,0 +1,64 @@
+span.required {
+  color: var(--red);
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+select {
+  border: none;
+  padding: 10px;
+  background: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-position: right center;
+  background-repeat: no-repeat;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--white);
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  border: none;
+  padding: 10px;
+  border: 1px solid var(--grayLight);
+  min-width: 240px;
+  width: 100%;
+  font-size: 13px;
+}
+
+input[type='text'],
+input[type='email'] {
+  height: 44px;
+}
+
+textarea {
+  min-height: 140px;
+}
+
+input[type='submit'] {
+  border: none;
+  background-color: var(--red);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 12px;
+  transition: background 0.5s;
+  padding: 15px 30px;
+  min-width: 200px;
+  margin-top: 20px;
+
+  &:hover {
+    background-color: var(--redDark);
+  }
+}
+
+.input-block {
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

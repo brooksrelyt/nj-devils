@@ -1,0 +1,15 @@
+{
+  "name": "search",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "build": "node-sass --output-style compressed -o ./dist/css/ ./src/scss -w",
+    "start": "yarn build"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
