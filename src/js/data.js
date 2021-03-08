@@ -34,22 +34,35 @@ const handleResponse = function (data) {
         return document.createElement('div');
       });
 
-      const description = document.createElement('p');
-      const player = document.createElement('h3');
+      const player = document.createElement('h2');
+      const list = document.createElement('ul');
+      const [gp, points, goals, assists] = [1, 2, 3, 4].map(function () {
+        return document.createElement('li');
+      });
 
-      // Title
+      // Player Name
       player.innerHTML = obj.player;
+      player.classList.add('medium-san-serif');
       item.appendChild(player);
 
-      // // Description
-      // description.innerHTML = obj.blurb;
-      // item.appendChild(description);
+      gp.innerHTML = '<span>Games Played:</span> ' + obj.gp;
+      list.appendChild(gp);
+      item.appendChild(list);
 
-      // if (obj.blurb == null) {
-      //   description.innerHTML = 'Bio Coming Soon.';
-      // }
+      goals.innerHTML = '<span>Goals:</span> ' + obj.g;
+      list.appendChild(goals);
+      item.appendChild(list);
+
+      assists.innerHTML = '<span>Assists:</span> ' + obj.a;
+      list.appendChild(assists);
+      item.appendChild(list);
+
+      points.innerHTML = '<span>Total Points:</span> ' + obj.pts;
+      list.appendChild(points);
+      item.appendChild(list);
 
       // Layout
+      col.setAttribute('data-filter', obj.hof);
       col.appendChild(item);
       display.appendChild(col);
 

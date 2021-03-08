@@ -27,9 +27,8 @@
         </filter-icon>
         <form>
           <input
+            onkeyup="filter(this)"
             type="search"
-            id="search"
-            name="q"
             aria-label="Search through site content"
             placeholder="Search for a player..."
           />
@@ -38,17 +37,14 @@
           <i className="fas fa-search" aria-hidden="true"></i>
         </search-icon>
         <filter-items>
-          <button data-filter="platinum">Most Goals</button>
-          <button data-filter="platinum">Highest Penalty Minutes</button>
-          <button data-filter="platinum">Item 3</button>
-          <button data-filter="platinum">Item 4</button>
-          <button data-filter="all">Clear All Filters</button>
+          <button class="filter" data-filter="1">Hall of Famer</button>
+          <button class="filter" data-filter="all">Clear All Filters</button>
         </filter-items>
       </filter-navbar>
     </filter-nav>
 
     <grid-lock>
-      <flex-columns id="data" data-columns="3"></flex-columns>
+      <flex-columns id="data" data-columns="4"></flex-columns>
     </grid-lock>
 
     <script src="js/data.js"></script>

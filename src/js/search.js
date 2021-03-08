@@ -1,20 +1,19 @@
+// Filter
 const filters = document.querySelectorAll('.filter');
 
 filters.forEach((filter) => {
   filter.addEventListener('click', () => {
     let selectedFilter = filter.getAttribute('data-filter');
     let itemsToHide = document.querySelectorAll(
-      `.filter-container .filtr-item:not([data-filter='${selectedFilter}'])`
+      `#data > div:not([data-filter='${selectedFilter}'])`
     );
     let itemsToShow = document.querySelectorAll(
-      `.filter-container [data-filter='${selectedFilter}']`
+      `#data [data-filter='${selectedFilter}']`
     );
 
     if (selectedFilter == 'all') {
       itemsToHide = [];
-      itemsToShow = document.querySelectorAll(
-        '.filter-container [data-filter]'
-      );
+      itemsToShow = document.querySelectorAll('#data [data-filter]');
     }
 
     itemsToHide.forEach((el) => {
@@ -28,3 +27,21 @@ filters.forEach((filter) => {
     });
   });
 });
+
+//search
+function filter(searchResults) {
+  search = searchResults.value.toLowerCase();
+
+  console.log(searchResults.value);
+
+  document.querySelectorAll('#data [data-filter]').forEach(function (el) {
+    text = el.innerText.toLowerCase();
+    if (text.match(search)) {
+      el.classList.remove('hide');
+      el.classList.add('show');
+    } else {
+      el.classList.add('hide');
+      el.classList.remove('show');
+    }
+  });
+}
